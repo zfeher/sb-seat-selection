@@ -1,7 +1,13 @@
 {
   "root": true,
+  
   "extends": [
-    "plugin:vue/essential",
-    "@vue/standard"
-  ]
+    "@vue/standard",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended"
+  ],
+
+  "rules": {
+    "comma-dangle": ["error", "only-multiline"]
+  }
 }
