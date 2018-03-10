@@ -1,4 +1,17 @@
-import { isObject } from '../utils'
+import { isObject, isString } from '../utils'
+
+describe('isString', () => {
+  it('should return if a value is string or not', () => {
+    expect(isString('dummy')).toBe(true)
+    expect(isString('123')).toBe(true)
+    expect(isString('')).toBe(true)
+    expect(isString(123)).toBe(false)
+    expect(isString({})).toBe(false)
+    expect(isString([])).toBe(false)
+    expect(isString(new Date())).toBe(false)
+    expect(isString(new RegExp())).toBe(false)
+  })
+})
 
 describe('isObject', () => {
   it('should return if a value is an object or not', () => {
