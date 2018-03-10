@@ -1,38 +1,7 @@
-/**
- * Checks if the argument has a type of String
- *
- * @param {any} value
- * @returns {boolean}
- *
- * @example
- *
- *      isString('abc')
- *      // => true
- *
- *      isString(1)
- *      // => false
- */
+import { curry } from 'ramda'
+
+export const includes = curry((searchTerm, list) => list.includes(searchTerm))
+
 export const isString = value => Object.prototype.toString.call(value) === '[object String]'
 
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @param {any} value the value to check.
- * @returns {boolean} returns `true` if `value` is an object, else `false`.
- * @example
- *
- * isObject({})
- * // => true
- *
- * isObject([1, 2, 3])
- * // => false
- *
- * isObject(Function)
- * // => false
- *
- * isObject(null)
- * // => false
- */
 export const isObject = value => Object.prototype.toString.call(value) === '[object Object]'

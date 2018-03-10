@@ -1,4 +1,16 @@
-import { isObject, isString } from '../utils'
+import { isObject, isString, includes } from '../utils'
+
+describe('includes', () => {
+  it('should return if the specified `value` is included in the specified `list`', () => {
+    expect(includes('retek', 'repa retek mogyoro')).toBe(true)
+    expect(includes('retek', ['repa', 'retek', 'mogyoro'])).toBe(true)
+
+    expect(includes('alma', 'repa retek mogyoro')).toBe(false)
+    expect(includes('alma', '')).toBe(false)
+    expect(includes('alma', ['repa', 'retek', 'mogyoro'])).toBe(false)
+    expect(includes('alma', [])).toBe(false)
+  })
+})
 
 describe('isString', () => {
   it('should return if a value is string or not', () => {
