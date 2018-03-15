@@ -1,5 +1,38 @@
 {
   "presets": [
-    "@vue/app"
-  ]
+    [
+      "env",
+      {
+        "modules": false,
+        "useBuiltIns": "usage"
+      }
+    ]
+  ],
+
+  "plugins": [
+    [
+      "transform-runtime",
+      {
+        "helpers": true,
+        "polyfill": false,
+        "regenerator": false,
+        "moduleName": "babel-runtime"
+      }
+    ]
+  ],
+
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
 }

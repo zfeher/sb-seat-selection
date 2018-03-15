@@ -1,11 +1,11 @@
 <template>
-  <div 
-    id="app" 
+  <div
+    id="app"
     :class="$style.app"
   >
-    <BaseSeat 
+    <BaseSeat
       :theme="undefined"
-      :mark="null" 
+      :mark="null"
     />
   </div>
 </template>
