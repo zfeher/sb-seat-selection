@@ -1,15 +1,12 @@
-<template>
-  <div :class="[$style.background, theme.background]">
-    <span :class="$style.mark">Base Seat</span>
-  </div>
-</template>
-
 <script>
+import { pathOr } from 'ramda'
 import seatMarkValidator from '@/prop-validators/seat-mark-validator'
 import seatStateValidator from '@/prop-validators/seat-state-validator'
 import { SEAT_STATES_MAP } from '@/constants'
 
 export default {
+  functional: true,
+
   props: {
     mark: {
       type: String,
@@ -24,22 +21,33 @@ export default {
     },
   },
 
-  computed: {
-    theme() {
-      switch (this.state) {
-        case SEAT_STATES_MAP.available:
-          return this.themeAvailable
-        case SEAT_STATES_MAP.assigned:
-          return this.themeAssigned
-        case SEAT_STATES_MAP.companion:
-          return this.themeCompanion
-        case SEAT_STATES_MAP.selected:
-          return this.themeSelected
-      }
-
-      return this.themeDefault
-    },
+  render(h, context) {
+    const { $style, props: { state, mark } } = context
+    const theme = getTheme(state, context)
+    const nativeOnClick = pathOr(() => {}, 'data.nativeOn.click'.split('.'), context)
+    return (
+      <div onClick={nativeOnClick} class={[$style.background, theme.background]}>
+        <span class={$style.mark}>{mark}</span>
+      </div>
+    )
   },
+}
+
+const getTheme = (state, context) => {
+  const { themeAvailable, themeAssigned, themeCompanion, themeSelected, themeDefault } = context
+
+  switch (state) {
+    case SEAT_STATES_MAP.available:
+      return themeAvailable
+    case SEAT_STATES_MAP.assigned:
+      return themeAssigned
+    case SEAT_STATES_MAP.companion:
+      return themeCompanion
+    case SEAT_STATES_MAP.selected:
+      return themeSelected
+  }
+
+  return themeDefault
 }
 </script>
 

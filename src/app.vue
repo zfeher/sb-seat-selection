@@ -5,17 +5,16 @@
   >
     <Seat
       :state="seatStates.available"
-      :mark="null"
+      mark="A"
       @click.native="handleSeatClick(1)"
     />
     <Seat
       :state="seatStates.companion"
-      :mark="null"
+      mark="B"
       @click.native="handleSeatClick(2)"
     />
     <Seat
       :state="seatStates.available"
-      :mark="null"
       @click.native="handleSeatClick(3)"
     />
   </div>
