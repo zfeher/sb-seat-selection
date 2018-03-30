@@ -4,7 +4,7 @@
     :class="$style.app"
   >
     <BaseSeat
-      :state="undefined"
+      :state="seatStates.available"
       :mark="null"
     />
   </div>
@@ -12,7 +12,7 @@
 
 <script>
 import BaseSeat from './components/base-seat/base-seat.vue'
-import { SEAT_THEMES } from './constants'
+import { SEAT_STATES_MAP } from '@/constants'
 
 export default {
   name: 'App',
@@ -23,7 +23,7 @@ export default {
 
   data() {
     return {
-      seatThemes: SEAT_THEMES,
+      seatStates: SEAT_STATES_MAP,
     }
   },
 }

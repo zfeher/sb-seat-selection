@@ -6,6 +6,8 @@
 
 <script>
 import { seatMarkValidator } from '@/prop-validators/seat-mark-validator'
+import { seatStateValidator } from '@/prop-validators/seat-state-validator'
+import { SEAT_STATES_MAP } from '@/constants'
 
 export default {
   props: {
@@ -14,12 +16,28 @@ export default {
       default: 'x',
       validator: seatMarkValidator,
     },
+
+    state: {
+      type: String,
+      default: '',
+      validator: seatStateValidator,
+    },
   },
 
   computed: {
     theme() {
-      return this.themeAvailable
-      // return this.themeSelected
+      switch (this.state) {
+        case SEAT_STATES_MAP.available:
+          return this.themeAvailable
+        case SEAT_STATES_MAP.assigned:
+          return this.themeAssigned
+        case SEAT_STATES_MAP.companion:
+          return this.themeCompanion
+        case SEAT_STATES_MAP.selected:
+          return this.themeSelected
+      }
+
+      return this.themeDefault
     },
   },
 }
