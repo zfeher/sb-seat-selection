@@ -4,14 +4,14 @@
     :class="$style.app"
   >
     <BaseSeat
-      :theme="undefined"
+      :state="undefined"
       :mark="null"
     />
   </div>
 </template>
 
 <script>
-import BaseSeat from './components/base-seat.vue'
+import BaseSeat from './components/base-seat/base-seat.vue'
 import { SEAT_THEMES } from './constants'
 
 export default {
