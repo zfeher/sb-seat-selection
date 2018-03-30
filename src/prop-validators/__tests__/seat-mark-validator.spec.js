@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { seatMarkValidator } from '../seat-mark-validator'
+import seatMarkValidator from '../seat-mark-validator'
 
 Vue.config.silent = true
 

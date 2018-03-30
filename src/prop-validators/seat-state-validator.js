@@ -5,8 +5,6 @@ import { validateAndLog } from './_internal'
 
 const validator = includes(__, SEAT_STATES)
 
-export const seatStateValidator = validateAndLog(
-  validator,
-  'state',
-  `Valid values: [${SEAT_STATES}]`
-)
+const seatStateValidator = validateAndLog(validator, 'state', `Valid values: [${SEAT_STATES}]`)
+
+export default seatStateValidator

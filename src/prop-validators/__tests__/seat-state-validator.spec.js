@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { SEAT_STATES } from '@/constants.js'
-import { seatStateValidator } from '../seat-state-validator.js'
+import seatStateValidator from '../seat-state-validator.js'
 
 Vue.config.silent = true
 

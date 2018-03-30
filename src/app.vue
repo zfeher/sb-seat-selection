@@ -3,28 +3,45 @@
     id="app"
     :class="$style.app"
   >
-    <BaseSeat
+    <Seat
       :state="seatStates.available"
       :mark="null"
+      @click.native="handleSeatClick(1)"
+    />
+    <Seat
+      :state="seatStates.companion"
+      :mark="null"
+      @click.native="handleSeatClick(2)"
+    />
+    <Seat
+      :state="seatStates.available"
+      :mark="null"
+      @click.native="handleSeatClick(3)"
     />
   </div>
 </template>
 
 <script>
-import BaseSeat from './components/base-seat/base-seat.vue'
+import Seat from './components/seat'
 import { SEAT_STATES_MAP } from '@/constants'
 
 export default {
   name: 'App',
 
   components: {
-    BaseSeat,
+    Seat,
   },
 
   data() {
     return {
       seatStates: SEAT_STATES_MAP,
     }
+  },
+
+  methods: {
+    handleSeatClick(id) {
+      console.log('app: seat click', id)
+    },
   },
 }
 </script>

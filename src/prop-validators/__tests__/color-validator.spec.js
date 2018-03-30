@@ -1,4 +1,4 @@
-import { colorValidator } from '../color-validator'
+import colorValidator from '../color-validator'
 
 describe('colorValidator', () => {
   it('should return if `value` is a color literal', () => {

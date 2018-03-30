@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import { seatMarkValidator } from '@/prop-validators/seat-mark-validator'
-import { seatStateValidator } from '@/prop-validators/seat-state-validator'
+import seatMarkValidator from '@/prop-validators/seat-mark-validator'
+import seatStateValidator from '@/prop-validators/seat-state-validator'
 import { SEAT_STATES_MAP } from '@/constants'
 
 export default {
