@@ -1,7 +1,7 @@
-const SEAT_STATE_AVAILABLE = 'available'
-const SEAT_STATE_ASSIGNED = 'assigned'
-const SEAT_STATE_COMPANION = 'companion'
-const SEAT_STATE_SELECTED = 'selected'
+export const SEAT_STATE_AVAILABLE = 'available'
+export const SEAT_STATE_ASSIGNED = 'assigned'
+export const SEAT_STATE_COMPANION = 'companion'
+export const SEAT_STATE_SELECTED = 'selected'
 
 export const SEAT_STATES_MAP = {
   available: SEAT_STATE_AVAILABLE,
