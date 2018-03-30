@@ -9,6 +9,12 @@ module.exports = {
         test: /\.vue$/,
         use: {
           loader: 'vue-loader',
+          options: {
+            cssModules: {
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              camelCase: true,
+            },
+          },
         },
       },
       {
