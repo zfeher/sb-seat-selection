@@ -14,8 +14,16 @@
       @click.native="handleSeatClick(2)"
     />
     <Seat
-      :state="seatStates.available"
+      :state="seatStates.assigned"
       @click.native="handleSeatClick(3)"
+    />
+    <Seat
+      :state="seatStates.unavailable"
+      @click.native="handleSeatClick(4)"
+    />
+    <Seat
+      :state="seatStates.selected"
+      @click.native="handleSeatClick(5)"
     />
   </div>
 </template>

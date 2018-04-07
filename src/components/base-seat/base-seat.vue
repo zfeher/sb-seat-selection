@@ -34,11 +34,20 @@ export default {
 }
 
 const getTheme = (state, context) => {
-  const { themeAvailable, themeAssigned, themeCompanion, themeSelected, themeDefault } = context
+  const {
+    themeAvailable,
+    themeUnavailable,
+    themeAssigned,
+    themeCompanion,
+    themeSelected,
+    themeDefault,
+  } = context
 
   switch (state) {
     case SEAT_STATES_MAP.available:
       return themeAvailable
+    case SEAT_STATES_MAP.unavailable:
+      return themeUnavailable
     case SEAT_STATES_MAP.assigned:
       return themeAssigned
     case SEAT_STATES_MAP.companion:
@@ -69,6 +78,9 @@ const getTheme = (state, context) => {
 </style>
 
 <style module="themeAvailable" src="./theme-available.css">
+</style>
+
+<style module="themeUnavailable" src="./theme-unavailable.css">
 </style>
 
 <style module="themeCompanion" src="./theme-companion.css">
