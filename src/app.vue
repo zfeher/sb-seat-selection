@@ -5,25 +5,28 @@
   >
     <Seat
       :state="seatStates.available"
+      code="1A"
       mark="A"
-      @click.native="handleSeatClick(1)"
     />
     <Seat
       :state="seatStates.companion"
+      code="2B"
       mark="B"
-      @click.native="handleSeatClick(2)"
     />
     <Seat
       :state="seatStates.assigned"
-      @click.native="handleSeatClick(3)"
+      code="3C"
+      mark="c"
     />
     <Seat
       :state="seatStates.unavailable"
-      @click.native="handleSeatClick(4)"
+      code="4D"
+      mark="D"
     />
     <Seat
       :state="seatStates.selected"
-      @click.native="handleSeatClick(5)"
+      code="5A"
+      mark="a"
     />
   </div>
 </template>
@@ -45,11 +48,7 @@ export default {
     }
   },
 
-  methods: {
-    handleSeatClick(id) {
-      console.log('app: seat click', id)
-    },
-  },
+  methods: {},
 }
 </script>
 

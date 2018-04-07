@@ -1,3 +1,11 @@
+<!--
+<template functional>
+  <div :class="[$style.background, themeAvailable.background]">
+    <span :class="$style.mark">{{ mark }}</span>
+  </div>
+</template>
+-->
+
 <script>
 import { pathOr } from 'ramda'
 import seatMarkValidator from '@/prop-validators/seat-mark-validator'
@@ -21,6 +29,9 @@ export default {
     },
   },
 
+  // vue test-utils doesn't like functional comps with render function which
+  //  relies on css modules :(
+  // with functional template or normal comp it creates empty {} for css module stuff
   render(h, context) {
     const { $style, props: { state, mark } } = context
     const theme = getTheme(state, context)
